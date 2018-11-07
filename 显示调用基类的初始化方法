@@ -1,0 +1,22 @@
+显示调用基类的初始化方法
+    当子类实现__init__初始化方法，基类的初始化__init__方法不会被自动调用
+    此时需要显示调用
+
+    class Human():
+        def __init__(self,n,a):
+            self.name=n
+            self.age=a
+
+        def infos(self):
+            print(self.name)
+            print(self.age)
+
+
+    class Student(Human):
+        def __init__(self,n,a,s):
+            self.score=s
+            super(__class__,self).__init__(n,a)
+
+        def infos(self)
+            super().infos()
+            print(self.score)

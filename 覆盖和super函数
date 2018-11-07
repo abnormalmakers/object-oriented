@@ -1,0 +1,31 @@
+覆盖：
+    覆盖是指有继承关系的类中，子类实现类与基类同名的方法，在子类实例调用该方法时，实际调用的
+    是子类中覆盖版本的方法，这种现象叫覆盖
+
+问题：当覆盖发生时，子类如何调用父类方法
+    class A():
+        def fn(self):
+            print("A被调用")
+
+    class B(A):
+        def fn(self):
+            print("B被调用")
+
+    a=A()
+    a.fn()  A被调用
+
+    b=B()
+    b.fn()  B被调用
+    b.__class__.__base__.fn(b)   A被调用
+
+    super函数
+        super（type,obj）返回绑定超类的实例
+        super() 返回绑定超类的实例，等同于super(__class__,实例方法的第一个参数self)
+
+    注意：
+        super()不加参数
+        或者
+        super(__class__,self)
+        都只能在方法内调用
+
+    super(B,b).fn()

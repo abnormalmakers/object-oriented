@@ -23,13 +23,23 @@ class Student(object):
         return score
 
 s=Student('张三',70)
+# 访问实例属性
 print(s.name)
+
+# 访问类方法
 print(s.all_student())
 print(Student.all_student())
+
+# 访问实例方法
 print(s.re_count())
 print(Student.re_count(s))
+
+# 访问静态方法
 print(s.re_score(50))
 print(Student.re_score(50))
 
+# 访问类变量
 print(s.class_name)
+
+# 访问实例方法
 print(s.re_classname())
