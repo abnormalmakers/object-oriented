@@ -1,0 +1,40 @@
+预置实例属性
+    __dict__属性
+        此实例绑定一个存储此实例自身变量的字典
+
+    示例：
+        class Dog():
+            pass
+
+        dog1=Dog()
+        print(dog1.__dict__)
+
+
+    __class__属性
+        此属性用来绑定创建此实例的类
+
+        作用:
+            可以借助此属性来访问创建此实例的类
+
+        class Dog():
+            pass
+
+        dog1=Dog()
+        dog2=dog1.__class__()
+
+
+    用于类的函数
+        isinstance(obj,class or tuple) 返回布尔值，如果此对象obj是某个class或某些类的对象实例，则返回True，反之False
+
+        例子：
+            class Dog():
+                pass
+
+            class Cat():
+                pass
+
+            dog=Dog()
+            isinstance(dog,Dog) True
+            isinstance(dog,Cat) False
+            isinstance(dog,(Cat,list,int)) False
+            isinstance(dog,(Dog,list,int)) True

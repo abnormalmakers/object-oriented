@@ -1,0 +1,18 @@
+类变量__slots__
+    作用：
+        限定一个类的事例只能有固定属性
+        通常为防止错写属性名而发生运行错误
+
+        例子：
+            class Student():
+                __slots__=[score]
+                def __init__(self,score):
+                    self.score=score
+
+            s=Student(50)
+            s.scoer=100 错写不会报错，而是新添变量scoer
+            print(s.score)  50
+
+        注意：
+            含有__slots__列表的类创建的实例对象没有__dict__属性
+            即此实例不用字典来保存对象属性(实例变量)
