@@ -1,0 +1,16 @@
+用于类的函数
+    issubclass(cls,class or tuple)
+    判断一个类是否继承其他类，如果此类的cls是class或tuple中任意一个派生类则返回True,否则返回False
+
+    class A():
+        pass
+
+    class B(A):
+        pass
+
+    class C(A):
+        pass
+
+    issubclass(B,A)     True
+    issubclass(C,(A,B))     True
+    issubclass(C,(str.int))     False
