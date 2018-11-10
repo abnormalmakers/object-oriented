@@ -1,0 +1,25 @@
+多继承
+    多继承是指对象继承两个或两个以上的父类
+
+    说明：
+        一个子类同时继承多个父类，父类中的方法可以被同时继承下来
+        如歌两个父类中有同名的方法，而子类又没有覆盖此方法时，调用结果难以确定
+
+多继承的缺陷：
+    标识符（名字空间冲突的问题）
+
+    例：
+        class A():
+            def m():
+                print('this is A')
+
+        class B():
+            def m():
+                print('this is B')
+
+        class AB(A,B):
+            def m():
+                print('this is AB')
+
+        ab=AB()
+        ab.m()  调用由class AB(A,B): 继承顺序决定，python3以广度优先，层层往上找

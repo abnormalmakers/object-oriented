@@ -1,0 +1,22 @@
+私有属性/方法
+    在python类中，以双下划线开头，不一双下划线结尾的标识符为私有成员，再类的外部无法直接访问
+
+
+    class A():
+        def __init__(self):
+            self.__p1=2
+
+        def test(self):
+            print(self.__p1)
+            self.__m1()
+
+        def __m1(self):
+            print("我是A类的私有成员")
+
+
+    a=A()
+    print(a.__p1)   无法访问
+    a.test()    2   我是A类的私有成员
+    a.__m1()    无法调用
+
+
