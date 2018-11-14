@@ -1,0 +1,77 @@
+函数重写
+    重写是指自定义的类内添加相应的方法，让自定义的类生成的对象实例，像内建对象一样进行内建的函数操作
+
+
+    1.对象转字符串函数重写
+        repr(obj)   返回一个能代表此对象的字符串，通常eval（repr(obj)）==obj
+        str(obj)    通过给定的对象返回一个字符串,返回的字符串不能给eval()方法使用
+
+        repr()实际调用的是 对象的__repr__
+        str()实际调用的是 对象的__str__
+
+        repr重写方法：
+            def __repr__(self):
+                return 能够表达self内容的字符串
+
+        str重写方法：
+            def __str__(self):
+                return 人能看懂的字符串
+
+        说明:
+            str(obj)函数优先调用__str__()方法返回字符串
+            如果obj没有__str__方法，则调用obj的__repr__方法返回字符串
+            如果obj没有__repr__（）方法，则调用object类的__repr__实例方法显示<xxxx>格式
+
+
+    2.数值转换函数重写
+        def __complex__(self)   complex()函数重写
+        def __int__(self)       int()函数重写
+        def __float__(self)     float()函数重写
+        def __bool__(self)      bool()函数重写
+
+
+    3.内建函数重写
+        __abs__     abs(obj)
+        __len__     len(obj)
+        __reversed__     reversed(obj)
+        __round__   round(obj)
+
+
+    4.布尔测试函数重写
+        def __bool__(self):
+            pass
+
+        作用：
+            用于bool(obj)函数取值
+            用于if语句真值表达式中
+            用于while语句真值表达式中
+
+        说明：
+            优先调用__bool__方法取值
+            如果不存在__bool__方法，则用__len__方法取值后判断是否为零值，如果不为零则返回True，否则返回False
+            如果没有__len__方法，则直接返回True
+
+
+    迭代器(高级)：
+        什么是迭代器？
+            可以通过next(it)方法取值的对象就是迭代器
+        迭代器协议：
+            迭代器协议是指对象能使用next函数获取下一项数据，在没有下一项数据时触发一个StopIterator异常来终止迭代的约定
+        实现方法：
+            类内需要有__next__方法来实现迭代器协议
+
+        语法形式：
+            class Myiterator:
+                def __next__(self):
+                    迭代器协议实现
+                    return 数据
+
+        什么是可迭代对象？
+            是指能用iter(obj)函数返回迭代器对象（实例）
+            可迭代对象内部一定要定义__iter__方法来返回迭代器
+
+
+
+
+
+
