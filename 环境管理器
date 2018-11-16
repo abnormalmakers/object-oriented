@@ -1,0 +1,18 @@
+环境管理器：
+    1.类内有__enter__和__exit__实例方法的类被称为环境管理器，能够被with语句管理的对象必须是环境管理器
+    2.__enter__方法在进入with语句时被调用，并且返回由as变量绑定的对象
+    3.__exit__在离开with语句时被调用，且可以用参数来判断离开with语句时，是否有异常发生，并作出相应的处理
+
+    示例：
+        class A:
+            def __enter__(self):
+                print('进入with语句')
+                return self     #返回的对象由as绑定
+
+            def __exit__(self,exc_type,exc_value,exc_tb):
+                print("离开with语句")
+
+                参数：
+                    exc_type：在没有异常时为None,出现异常时为异常类型     <class 'ValueError'>
+                    exc_value:在没有异常时为None,出现异常时绑定错误对象   invalid literal for int() with base 10: 'a'
+                    exc_tb:在没有异常时为None,再出现异常时绑定traceback对象  <traceback object at 0x0C5AA620>
