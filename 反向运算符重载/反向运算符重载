@@ -1,0 +1,11 @@
+反向运算符的重载
+    当左边的类型为内建类型，右边为自定义类型时，要实现运算符不许用一下方式重载
+
+    反向算术运算符重载：
+        __radd__(self,rhs)  lhs+self 加法
+        __rsub__(self,rhs)  lhs+self 减法
+        __rmul__(self,rhs)  lhs+self 乘法
+        __rtruediv__(self,rhs)  lhs+self 除法
+        __rfloordiv__(self,rhs)  lhs+self 地板除法
+        __rmod__(self,rhs)  lhs+self 求余
+        __rpow__(self,rhs)  lhs+self 幂

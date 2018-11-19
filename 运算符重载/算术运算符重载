@@ -1,0 +1,17 @@
+什么是运算符重载？
+    让自定义的类声场的对象（实例）能够使用运算符操作
+
+    作用：
+        嚷自定义的类生成的对象实例像内建对象一样运行运算符操作
+
+        让自定义的对象，将运算符赋予新的运算规则
+
+算术运算符重载：
+    __add__(self,rhs)  self+rhs 加法
+    __sub__(self,rhs)  self+rhs 减法
+    __mul__(self,rhs)  self+rhs 乘法
+    __truediv__(self,rhs)  self+rhs 除法
+    __floordiv__(self,rhs)  self+rhs 地板除法
+    __mod__(self,rhs)  self+rhs 求余
+    __pow__(self,rhs)  self+rhs 幂
+
