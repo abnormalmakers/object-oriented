@@ -1,0 +1,12 @@
+比较运算符：
+    __lt__(self,rhs)    self < rhs 小于
+    __le__(self,rhs)    self <= rhs 小于
+    __gt__(self,rhs)    self > rhs 小于
+    __le__(self,rhs)    self >= rhs 小于
+    __eq__(self,rhs)    self == rhs 小于
+    __ne__(self,rhs)    self ！= rhs 小于
+
+    注：
+        比较运算符通常返回True or False
+
+

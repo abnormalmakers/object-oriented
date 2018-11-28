@@ -1,0 +1,29 @@
+位运算符重载
+    __invert__(self)    ~self   取反
+    __and__(self,rhs)   self & rhs  位与
+    __or__(self,rhs)    self | rhs  位或
+    __xor__(self,rhs)   self ^ rhs  位异或
+    __lshift__(self,rhs)    self << rhs 左移
+    __rshift__(self,rhs)    self >> rhs 右移
+
+    & （与）：两个都是真（1）时，结果才是真
+    | （或）：有一个是真（1）时，就是真
+    ^ (异或)：相同为假（0），不同为真
+
+反向位运算符  （左边为系统内建类型时）
+    __rand__(self,lhs)   lhs & self   反向位与
+    __ror__(self,lhs)    lhs | self 反向位或
+    __rxor__(self,lhs)   lhs ^ self 反向位异或
+    __rlshift__(self,lhs)    lhs << self  反向 左移
+    __rrshift__(self,lhs)    lhs >> self  反向右移
+
+
+复合赋值位运算符
+    __iand__(self,lhs)   lhs &= self  位与
+    __ior__(self,lhs)    lhs |= self 位或
+    __ixor__(self,lhs)   lhs ^= self 位异或
+    __ilshift__(self,lhs)    lhs <<= self  左移
+    __irshift__(self,lhs)    lhs >>= self  右移
+
+
+

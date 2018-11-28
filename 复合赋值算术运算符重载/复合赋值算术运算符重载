@@ -1,0 +1,7 @@
+__iadd__(self,rhs)  self + =rhs 加法
+__isub__(self,rhs)  self - =rhs 减法
+__imul__(self,rhs)  self * =rhs 乘法
+__itruediv__(self,rhs)  self / =rhs 除法
+__ifloordiv__(self,rhs)  self // =rhs 地板除法
+__imod__(self,rhs)  self % =rhs 求余
+__ipow__(self,rhs)  self ** =rhs 幂
