@@ -1,4 +1,5 @@
 class A():
+    _foo=3
     def __init__(self):
         self.__p1 = 2
 
@@ -14,6 +15,7 @@ a = A()
 # print(a.__p1)
 # a.__m1()
 a.test()
+print(a._foo)
 
 
 
