@@ -1,7 +1,7 @@
 class Student(object):
     count=68
     class_name='2班'
-
+    _s=123
     @classmethod
     def all_student(cls):
         """类方法不能访问实例变量"""
@@ -43,3 +43,4 @@ print(s.class_name)
 
 # 访问实例方法
 print(s.re_classname())
+print('s._s',s._s)

@@ -21,8 +21,8 @@ b = B()
 
 b.fn()
 b.__class__.__base__.fn(b)
-
+print('aaaa')
 super(B,b).fn()
-
+print('aaaa')
 b.run()
 
